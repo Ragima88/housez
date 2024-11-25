@@ -1,0 +1,28 @@
+@import "../../../styles/mixins";
+.header-mobile {
+  @include flex(column, center, center);
+  background-color: #004274;
+  display: flex;
+  &-in {
+    @include flex(row, center, space-between);
+    padding: 20px 20px;
+    .login-btn {
+      display: flex;
+      background-color: transparent;
+      border: none;
+      width: 22px;
+
+      .login-img {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .header-mobile {
+    display: none;
+  }
+}

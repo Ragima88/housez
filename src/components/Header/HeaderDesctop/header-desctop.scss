@@ -1,0 +1,101 @@
+@import "../../../styles/mixins";
+.header-desctop {
+  @include flex(column, center, center);
+  background-color: rgb(0, 157, 255);
+  padding: 0 25px;
+  display: none;
+  &-in {
+    @include flex(row, center, space-between);
+    .header-desctop-right {
+      @include flex(row, center, flex-end);
+      .nav-menu-desc {
+        @include flex(row, center, center, auto);
+        color: #ffffff;
+        font-family: Roboto;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 90px;
+        .navigation-link {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding-right: 0.5rem;
+          padding-left: 0.5rem;
+          margin-right: 20px;
+          position: relative;
+          cursor: pointer;
+          &::after {
+            content: "";
+            position: absolute;
+            background-image: url(/src/assets/icons/icons-dropdown.png);
+            background-repeat: no-repeat;
+            width: 19px;
+            height: 25px;
+            display: inline-block;
+            right: -12px;
+          }
+        }
+      }
+      .phone-div {
+        @include flex(row, center, center, auto);
+        flex: none;
+        padding: 0 20px 0 10px;
+        .number {
+          font-family: Roboto;
+          font-size: 12px;
+          font-weight: 500;
+          text-align: left;
+          text-transform: uppercase;
+          line-height: 90px;
+          color: #ffffff;
+          margin-left: 8px;
+        }
+        .phone-icon {
+          width: 18px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+      .login-btn {
+        background-color: transparent;
+        border: none;
+
+        margin-right: 20px;
+        .login-img {
+          width: 22px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .desctop-btn {
+        display: flex;
+        flex: none;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+        background-color: rgba(255, 255, 255, 0.2);
+        font-family: Roboto;
+        font-size: 12px;
+        font-weight: 500;
+        text-align: left;
+        text-transform: uppercase;
+        padding: 10px 15px;
+        transition: all 0.3s ease;
+        &:hover {
+          color: rgba(255, 255, 255, 1);
+          border: 1px solid #00aeef;
+          background-color: rgba(0, 174, 255, 0.65);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .header-desctop {
+    display: flex;
+  }
+}
