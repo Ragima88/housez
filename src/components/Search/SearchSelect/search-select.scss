@@ -1,0 +1,39 @@
+@import "../../../styles/mixins";
+.search-select {
+  @include flex(column, flex-start, center);
+
+  .search-label {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 4px;
+  }
+  .search-input {
+    width: 100%;
+    background-color: #ffffff;
+    border-color: #dce0e0;
+    color: #a1a7a8;
+    border: 1px solid #dce0e0;
+    font-weight: 400;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 15px;
+    padding-left: 10px;
+    line-height: 40px;
+    margin-bottom: 13px;
+    &:active {
+      color: #212529;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .search-select {
+    width: 25%;
+    margin-right: 10px;
+    .search-input {
+      margin-bottom: 0;
+    }
+  }
+}

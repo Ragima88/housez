@@ -1,0 +1,27 @@
+.search-btn {
+  width: 100%;
+  font-family: Roboto;
+  font-size: 15px;
+  border: 1px solid transparent;
+  display: inline-block;
+  line-height: 1;
+  padding: 12px 24px;
+  border-radius: 3px;
+  color: #fff;
+  fill: #fff;
+  text-align: center;
+  transition: all 0.3s ease;
+  background-color: #00aeff;
+  cursor: pointer;
+  border-color: #00aeff;
+  &:hover {
+    background-color: #33beff;
+    border-color: #00aeff;
+  }
+}
+@media (min-width: 768px) {
+  .search-btn {
+    width: 20%;
+    margin-top: 20px;
+  }
+}

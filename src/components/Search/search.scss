@@ -1,0 +1,44 @@
+@import "../../styles/mixins";
+.search-wrapper {
+  @include flex(column, center, center);
+  max-width: 990px;
+  padding: 0 6px;
+  .search-top {
+    @include flex(row, center, center);
+    .search-title {
+      color: #ffffff;
+      background-color: rgba(0, 174, 255, 0.56);
+      padding: 10px 21px 10px 25px;
+      margin: 0px 1px 0px 1px;
+      font-weight: 500;
+      border-radius: 4px 4px 0 0;
+      &:active {
+        color: #000000;
+        background-color: #ffffff;
+      }
+    }
+  }
+  .search-bottom {
+    @include flex(column, center, center);
+    background-color: #ffffff;
+    padding: 30px 30px 30px 30px;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.1);
+    /*margin-left: calc(-10px / 2);
+    margin-right: calc(-10px / 2);
+    margin-bottom: -10px;*/
+    &-inputs {
+      @include flex(column, flex-start, center);
+    }
+  }
+}
+@media (min-width: 768px) {
+  .search-wrapper {
+    .search-bottom {
+      @include flex(row, center, center);
+      &-inputs {
+        @include flex(row, center, center);
+      }
+    }
+  }
+}

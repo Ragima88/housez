@@ -1,19 +1,16 @@
 @import "../../../styles/mixins";
-.header-desctop {
+.header-desctop-pages {
   @include flex(column, center, center);
-  background-color: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  z-index: 2;
+  background-color: white;
   padding: 0 25px;
-  display: none;
+  display: flex;
   &-in {
     @include flex(row, center, space-between);
     .header-desctop-right {
       @include flex(row, center, flex-end);
-
-      .nav-menu-desc {
+      .nav-menu-desc-pages {
         @include flex(row, center, center, auto);
-        color: #ffffff;
+        color: #004274;
         font-family: Roboto;
         font-size: 12px;
         font-weight: 500;
@@ -31,12 +28,12 @@
           &::after {
             content: "";
             position: absolute;
-            background-image: url(/src/assets/icons/icons-dropdown.png);
+            background-image: url(/src/assets/icons/icon-arrow-blue.png);
             background-repeat: no-repeat;
-            background-size: contain;
-            width: 18px;
-            height: 18px;
+            width: 13px;
+            height: 13px;
             display: inline-block;
+            background-size: contain;
             right: -12px;
           }
         }
@@ -52,11 +49,12 @@
           text-align: left;
           text-transform: uppercase;
           line-height: 90px;
-          color: #ffffff;
+          color: #004274;
           margin-left: 8px;
         }
         .phone-icon {
           width: 18px;
+
           img {
             width: 100%;
           }
@@ -79,8 +77,8 @@
         display: flex;
         flex: none;
         color: #ffffff;
-        border: 1px solid #ffffff;
-        background-color: rgba(255, 255, 255, 0.2);
+        border: 1px solid #00aeff;
+        background-color: #00aeff;
         font-family: Roboto;
         font-size: 12px;
         font-weight: 500;
@@ -89,8 +87,8 @@
         padding: 10px 15px;
         transition: all 0.3s ease;
         &:hover {
-          color: rgba(255, 255, 255, 1);
-          border: 1px solid #00aeef;
+          color: rgba(255, 255, 255, 0.99);
+          border: 1px solid #00aeff;
           background-color: rgba(0, 174, 255, 0.65);
         }
       }
