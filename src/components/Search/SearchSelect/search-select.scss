@@ -22,7 +22,7 @@
     font-size: 15px;
     padding-left: 10px;
     line-height: 40px;
-    margin-bottom: 13px;
+    margin-bottom: 10px;
     &:active {
       color: #212529;
     }
@@ -32,8 +32,5 @@
   .search-select {
     width: 25%;
     margin-right: 10px;
-    .search-input {
-      margin-bottom: 0;
-    }
   }
 }

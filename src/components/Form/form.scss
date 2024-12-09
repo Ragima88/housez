@@ -1,0 +1,135 @@
+@import "../../styles/mixins";
+form {
+  @include flex(column, flex-start, flex-start);
+  padding: 50px 50px 60px;
+  background-color: #fff;
+  z-index: 1;
+  h2 {
+    font-family: "Roboto", Sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #000000;
+    text-transform: capitalize;
+    line-height: 1.2;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+  p {
+    font-family: "Roboto", Sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin-bottom: 16px;
+    color: #000000;
+    text-align: left;
+  }
+  label {
+    font-family: "Roboto", Sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: #222222;
+  }
+  input,
+  select {
+    background-color: #ffffff;
+    border: 1px solid #dce0e0;
+    border-width: 2px 2px 2px 2px;
+    min-height: 47px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  .inquiry-input,
+  .information-input,
+  .location-input,
+  .property-input,
+  .checkbox-div {
+    @include flex(column, flex-start, flex-start);
+  }
+  .location-div {
+    @include flex(column, flex-start, flex-start);
+  }
+  input::placeholder {
+    font-family: Roboto;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 400;
+  }
+  select {
+    font-family: Roboto;
+    font-size: 15px;
+    color: #222222;
+    font-weight: 300;
+  }
+  .checkbox-div {
+    @include flex(column, flex-start, flex-start);
+    margin-bottom: 20px;
+    .checkbox {
+      @include flex(row, flex-start, flex-start);
+      text-align: left;
+      margin-top: 5px;
+      label {
+        font-family: Roboto;
+        font-size: 15px;
+        color: #222222;
+        font-weight: 300;
+      }
+      #checkbox {
+        width: 13px;
+        height: 13px;
+        min-height: 0;
+        margin: 0 8px 0 0;
+      }
+    }
+  }
+  .name-input,
+  .max-min-inputs,
+  .number-inputs {
+    @include flex(column, flex-start, flex-start);
+  }
+  .form-btn {
+    color: #fff;
+    width: 100%;
+    justify-content: center;
+    background-color: #00aeff;
+    border: 1px solid #00aeff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 40px;
+    padding: 0 15px;
+    display: flex;
+    border-radius: 0.25rem;
+  }
+}
+@media (min-width: 768px) {
+  form {
+    width: 40%;
+    .name-input {
+      @include flex(row, center, center);
+      #first-name {
+        margin-right: 10px;
+      }
+    }
+    .location-div {
+      @include flex(row, flex-end, center);
+      .location-input {
+        margin-right: 10px;
+      }
+    }
+    .max-min-inputs {
+      @include flex(row, center, center);
+      #max {
+        margin-right: 10px;
+      }
+    }
+    .number-inputs {
+      @include flex(row, center, center);
+      #num-bed {
+        margin-right: 10px;
+      }
+    }
+  }
+}

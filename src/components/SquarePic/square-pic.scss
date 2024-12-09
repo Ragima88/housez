@@ -1,0 +1,273 @@
+@import "../../styles/mixins";
+.square-div {
+  @include flex(column, center, center);
+
+  .square-img-link {
+    display: flex;
+    position: relative;
+    width: 100%;
+    .slider-overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: linear-gradient(
+        rgba(0, 0, 0, 0) 0 50%,
+        rgba(0, 0, 0, 0.75) 100%
+      );
+      transition: opacity 300ms ease;
+      &:hover {
+        opacity: 0;
+      }
+    }
+    .square-img {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .featured {
+      background-color: #77c720;
+      color: #ffffff;
+      font-size: 10px;
+      line-height: 11px;
+      text-transform: uppercase;
+      padding: 3px 5px;
+      font-weight: 500;
+      position: absolute;
+      border-radius: 2px;
+      top: 20px;
+      left: 20px;
+    }
+    .position {
+      position: absolute;
+      font-size: 10px;
+      line-height: 11px;
+      margin: 0;
+      text-transform: uppercase;
+      padding: 3px 5px;
+      background-color: rgba(0, 0, 0, 0.65);
+      right: 20px;
+      top: 20px;
+      color: #fff;
+      font-weight: 500;
+      border-radius: 2px;
+    }
+    .price {
+      font-family: Roboto;
+      position: absolute;
+      font-size: 18px;
+      font-weight: 400;
+      color: #fff;
+      bottom: 20px;
+      left: 20px;
+    }
+    .tool-icons {
+      @include flex(row, center, center, auto);
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      span {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+        text-align: center;
+        color: #fff;
+        border: 1px solid transparent;
+        background-color: rgba(0, 0, 0, 0.35);
+        transition: 0.2s;
+        border-radius: 4px;
+        margin-right: 2px;
+      }
+      .arrows {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          background-image: url(/src/assets/icons/icon-two-arrows.png);
+          background-size: contain;
+          width: 18px;
+          height: 18px;
+          left: 6px;
+          bottom: 6px;
+        }
+      }
+      .heart {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          background-image: url(/src/assets/icons/icon-heart.png);
+          background-size: contain;
+          width: 18px;
+          height: 18px;
+          left: 6px;
+          bottom: 6px;
+        }
+      }
+      .circle {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          background-image: url(/src/assets/icons/icon-plus.svg);
+          background-size: contain;
+          width: 18px;
+          height: 18px;
+          left: 6px;
+          bottom: 6px;
+        }
+      }
+    }
+  }
+  .square-content {
+    @include flex(column, flex-start, center);
+    background-color: #ffffff;
+    padding: 20px;
+    border-bottom: 1px solid #dce0e0;
+    .square-content-name {
+      color: #222222;
+      margin-bottom: 3px;
+    }
+    .square-content-adress {
+      font-family: Roboto;
+      color: #636363;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+    .square-icons-div {
+      @include flex(column, center, center);
+      .square-icons {
+        @include flex(row, center, flex-start);
+        margin-bottom: 12px;
+        span {
+          font-family: Roboto;
+          font-size: 14px;
+          line-height: 16px;
+          font-weight: 500;
+          color: #222222;
+          margin-left: 22px;
+          margin-right: 20px;
+        }
+        .square-icon-bed {
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            background-image: url(/src/assets/icons/icon-bed.png);
+            background-size: contain;
+            width: 18px;
+            height: 18px;
+            right: 15px;
+          }
+        }
+        .square-icon-bath {
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            background-image: url(/src/assets/icons/icon-shower.png);
+            background-size: contain;
+            width: 18px;
+            height: 18px;
+            right: 15px;
+          }
+        }
+        .square-icon-car {
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            background-image: url(/src/assets/icons/icon-car.png);
+            background-size: contain;
+            width: 18px;
+            height: 18px;
+            right: 15px;
+          }
+        }
+      }
+      .square-area {
+        @include flex(row, center, flex-start);
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 500;
+        position: relative;
+        margin-left: 67px;
+        margin-right: 20px;
+        margin-bottom: 12px;
+        &::after {
+          content: "";
+          position: absolute;
+          background-image: url(/src/assets/icons/icon-ruler.png);
+          background-size: contain;
+          width: 22px;
+          height: 22px;
+          left: -29px;
+        }
+      }
+    }
+
+    .square-desc-name {
+      font-family: Roboto;
+      color: #222222;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 16px;
+    }
+  }
+  .square-author {
+    @include flex(row, center, space-between);
+    background-color: #ffffff;
+    padding: 15px 24px;
+    &-name,
+    &-date {
+      font-family: Roboto;
+      color: #636363;
+      font-size: 12px;
+    }
+    &-name {
+      position: relative;
+      margin-left: 20px;
+      &::after {
+        content: "";
+        position: absolute;
+        background-image: url(/src/assets/icons/icon-user.png);
+        background-size: contain;
+        width: 15px;
+        height: 15px;
+        left: -22px;
+        bottom: 2px;
+      }
+    }
+    &-date {
+      position: relative;
+      margin-left: 20px;
+      &::after {
+        content: "";
+        position: absolute;
+        background-image: url(/src/assets/icons/icon-paperclip.png);
+        background-size: contain;
+        width: 15px;
+        height: 15px;
+        left: -22px;
+        bottom: 2px;
+      }
+    }
+  }
+}
+@media (min-width: 378px) {
+  .square-div {
+    .square-content {
+      .square-icons-div {
+        @include flex(row, center, center);
+        .square-area {
+          margin-left: 25px;
+        }
+      }
+    }
+  }
+}

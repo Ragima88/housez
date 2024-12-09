@@ -1,0 +1,28 @@
+.slider-featured {
+  width: 100%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffff;
+  background: none;
+  font-size: 24px;
+  width: auto;
+  height: auto;
+}
+
+.swiper-button-next {
+  right: 10px;
+  &:after {
+    margin-top: -180px;
+    font-size: 24px;
+  }
+}
+
+.swiper-button-prev {
+  left: 10px;
+  &:after {
+    margin-top: -180px;
+    font-size: 24px;
+  }
+}

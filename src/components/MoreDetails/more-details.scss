@@ -1,0 +1,19 @@
+@import "../../styles/mixins";
+.details-link {
+  @include flex(row, center, space-between);
+  z-index: 1;
+  &-title {
+    font-family: Roboto;
+    color: #fff;
+    bottom: 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .details-img {
+    width: 22px;
+    height: 22px;
+    img {
+      width: 100%;
+    }
+  }
+}

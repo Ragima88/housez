@@ -2,7 +2,7 @@
 .header-mobile {
   @include flex(column, center, center);
   background-color: #004274;
-  display: flex;
+  z-index: 1;
   &-in {
     @include flex(row, center, space-between);
     padding: 20px 20px;

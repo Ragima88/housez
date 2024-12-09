@@ -7,10 +7,10 @@ const Header = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   return (
-    <>
+    <header>
       <HeaderMobile />
       {isHomePage ? <HeaderDesctop /> : <HeaderDesctopPages />}
-    </>
+    </header>
   );
 };
 export default Header;

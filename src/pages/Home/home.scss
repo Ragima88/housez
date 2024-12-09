@@ -1,27 +1,39 @@
 @import "../../styles/mixins";
-.header {
-  position: relative;
-}
 .hero-pic {
   position: absolute;
   background-image: url("/src/assets/images/hero-image.jpg");
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 600px;
   background-size: cover;
   background-position: center;
-  z-index: -1;
-  height: 100vh;
-  overflow: hidden;
+  height: 100%;
+}
+.overlay {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #002e51;
+  opacity: 0.7;
+  mix-blend-mode: multiply;
+}
+.hero-content {
+  @include flex(column, center, center);
+  z-index: 1;
 }
 .hero-section {
   @include flex(column, center, center);
-
+  position: relative;
+  overflow: hidden;
+  height: 600px;
   &-in {
     @include flex(column, center, center);
     max-width: 726px;
     color: #fff;
+    padding: 0 20px;
     h2 {
       font-family: "Roboto", Sans-serif;
       font-size: 42px;
@@ -42,10 +54,11 @@
 }
 .res-com {
   @include flex(column, center, center);
-  padding: 70px 0;
+  padding: 100px 45px;
 
   &-in {
     @include flex(column, center, center);
+    max-width: 920px;
     h2 {
       font-family: "Roboto", Sans-serif;
       font-size: 28px;
@@ -72,9 +85,527 @@
       height: 1px;
       background-color: #000000;
       text-align: left;
+      margin-bottom: 40px;
     }
     .residential {
       @include flex(column, center, center);
+      margin-bottom: 30px;
+      &-left,
+      &-middle,
+      &-right {
+        @include flex(column, flex-start, center);
+      }
     }
+    .commercial {
+      @include flex(column, center, center);
+    }
+  }
+}
+.discover-listing {
+  @include flex(column, center, center);
+  background-color: #fafafa;
+  padding: 70px 30px;
+  &-in {
+    @include flex(column, center, center);
+    h2 {
+      font-family: "Roboto", Sans-serif;
+      font-size: 25px;
+      font-weight: 300;
+      color: #000000;
+      text-transform: capitalize;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    p {
+      font-family: "Roboto", Sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: #7a7a7a;
+      margin-bottom: 36px;
+    }
+  }
+}
+.form-section {
+  @include flex(column, center, center);
+  background-image: url(/src/assets/images/parallax-background.jpg);
+  background-attachment: fixed;
+  background-position: center left;
+  background-repeat: repeat;
+  background-size: cover;
+  position: relative;
+  .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00335a;
+    opacity: 0.85;
+  }
+  &-in {
+    @include flex(column, center, center);
+    padding: 150px 0 120px;
+  }
+  &-content {
+    @include flex(row, center, center);
+    flex-wrap: wrap;
+    color: #fff;
+    text-align: left;
+    padding: 0 30px 30px;
+    z-index: 1;
+    .line {
+      display: flex;
+      margin: 15px 0;
+      width: 100px;
+      height: 0.5px;
+      background-color: #fff;
+    }
+    &-zero {
+      @include flex(column, flex-start, center);
+      margin-bottom: 20px;
+      h2 {
+        font-family: "Roboto", Sans-serif;
+        font-size: 31px;
+        font-weight: 300;
+        line-height: 1.6em;
+        margin-bottom: 30px;
+        text-transform: capitalize;
+      }
+    }
+
+    h3 {
+      font-family: "Roboto", Sans-serif;
+      font-size: 25px;
+      font-weight: 300;
+      line-height: 1.4em;
+      letter-spacing: 0px;
+      margin-bottom: 15px;
+      text-transform: capitalize;
+    }
+    p {
+      color: rgba(255, 255, 255, 0.63);
+      font-family: "Roboto", Sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.5em;
+      margin-bottom: 30px;
+    }
+    span {
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+  }
+  &-content-text {
+    @include flex(column, flex-start, center);
+  }
+}
+.properties {
+  @include flex(column, center, center);
+  background-color: #fafafa;
+  padding: 100px 30px;
+  &-in {
+    @include flex(column, center, center);
+    .property-sliders {
+      @include flex(column, center, center);
+    }
+    h2 {
+      font-family: "Roboto", Sans-serif;
+      font-size: 25px;
+      font-weight: 300;
+      line-height: 1.4em;
+      color: #000000;
+      text-transform: capitalize;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-family: "Roboto", Sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: #7a7a7a;
+      margin-bottom: 35px;
+    }
+  }
+}
+.cities {
+  @include flex(column, center, center);
+  padding: 100px 30px;
+  &-in {
+    @include flex(column, center, center);
+  }
+  &-content {
+    @include flex(column, flex-start, center);
+    h2 {
+      font-family: "Roboto", Sans-serif;
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 10px;
+      color: #000000;
+      text-transform: capitalize;
+      text-align: left;
+    }
+    p {
+      text-align: left;
+      font-family: "Roboto", Sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.7em;
+      margin-bottom: 30px;
+      color: #7a7a7a;
+    }
+  }
+  &-slider {
+    @include flex(column, center, center);
+  }
+}
+.agents {
+  @include flex(column, center, center);
+  padding: 100px 30px;
+  background-color: #fafafa;
+
+  &-in {
+    @include flex(column, center, center);
+
+    h2 {
+      font-family: "Roboto", Sans-serif;
+      font-size: 25px;
+      font-weight: 300;
+      margin-bottom: 8px;
+      color: #000000;
+      text-transform: capitalize;
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      font-family: "Roboto", Sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.7em;
+      margin-bottom: 35px;
+      color: #7a7a7a;
+    }
+    .agents-content {
+      @include flex(row, flex-start, flex-start);
+      flex-wrap: wrap;
+
+      .agent {
+        @include flex(column, center, center);
+        padding: 35px;
+        background-color: #fff;
+        margin-left: 1px;
+        margin-bottom: -1px;
+        text-align: center;
+        transition: all 0.3s ease;
+        &-pic {
+          width: 150px;
+          margin-bottom: 30px;
+          img {
+            width: 100%;
+            border-radius: 50%;
+          }
+        }
+        &-name {
+          font-weight: 600;
+          color: #00aeff;
+          text-align: center;
+          font-family: "Roboto", Sans-serif;
+          font-size: 15px;
+        }
+        &-company {
+          font-weight: 500;
+          color: #222222;
+          text-align: center;
+          font-family: "Roboto", Sans-serif;
+          font-size: 15px;
+          margin-bottom: 20px;
+        }
+        &-desc {
+          font-weight: 300;
+          color: #636363;
+          text-align: center;
+          font-family: "Roboto", Sans-serif;
+          font-size: 15px;
+          margin-bottom: 20px;
+        }
+        &-profile {
+          font-weight: 500;
+          color: #00aeff;
+          text-align: center;
+          font-family: "Roboto", Sans-serif;
+          font-size: 15px;
+        }
+        &:hover {
+          box-shadow: 0 70px 70px rgba(0, 0, 0, 0.2);
+          transform: translate(0, -10px);
+        }
+      }
+    }
+  }
+}
+.testimonials {
+  @include flex(column, center, center);
+  padding: 100px 30px 130px;
+  &-in {
+    @include flex(column, center, center);
+    h2 {
+      font-family: "Roboto", Sans-serif;
+      font-size: 25px;
+      font-weight: 300;
+      margin-bottom: 8px;
+      color: #000000;
+      text-transform: capitalize;
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      font-family: "Roboto", Sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.7em;
+      margin-bottom: 35px;
+      color: #7a7a7a;
+    }
+    .testimonials-content {
+      @include flex(column, center, center);
+      .testimonial {
+        @include flex(column, center, center, auto);
+        position: relative;
+        color: #000000;
+        background-color: #edf9ff;
+        padding: 40px;
+        margin-bottom: 30px;
+        &-text {
+          font-family: "Roboto", Sans-serif;
+          font-size: 15px;
+          color: #000000;
+          margin-bottom: 30px;
+          text-align: left;
+          margin-top: 45px;
+        }
+        &-author {
+          @include flex(row, center, center);
+          .testimonial-pic {
+            width: 70px;
+            margin-right: 20px;
+            img {
+              width: 100%;
+              border-radius: 50%;
+            }
+          }
+          .testimonial-info {
+            @include flex(column, flex-start, center);
+            .testimonial-name,
+            .testimonial-job {
+              font-family: "Roboto", Sans-serif;
+              font-size: 15px;
+              color: #000000;
+              font-weight: 300;
+              text-align: left;
+            }
+          }
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          background-image: url(/src/assets/icons/icon-quote.png);
+          background-repeat: no-repeat;
+          top: 35px;
+          left: 40px;
+          background-size: cover;
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+.partners {
+  @include flex(column, center, center);
+  border-top: 1px solid #ececec;
+  display: none;
+  &-in {
+    @include flex(row, center, center);
+    padding: 15px 0;
+  }
+  &-logo {
+    padding: 10px;
+    width: 100%;
+    img {
+      width: 150px;
+    }
+  }
+}
+@media (min-width: 576px) {
+  .properties-in .property-sliders {
+    @include flex(row, center, center);
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 768px) {
+  .form-section-in {
+    @include flex(row, center, center);
+    padding-right: 3px;
+    .form-section-content {
+      width: 60%;
+    }
+  }
+  .res-com-in .residential {
+    position: relative;
+    padding-bottom: 68%;
+    &-in {
+      position: absolute;
+      @include flex(row, flex-start, center);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    &-left,
+    &-middle,
+    &-right {
+      width: 33.3%;
+      height: 100%;
+      justify-content: space-between;
+    }
+    &-left,
+    &-middle {
+      margin-right: 30px;
+    }
+    &-left {
+      align-items: flex-start;
+      justify-content: flex-end;
+      .square-pic-two-link {
+        height: 47%;
+      }
+    }
+    &-middle {
+      align-items: center;
+      .square-pic-two-link {
+        height: 100%;
+      }
+    }
+    &-right {
+      align-items: center;
+      .square-pic-two-link {
+        height: 47%;
+      }
+    }
+  }
+  .res-com-in .commercial {
+    @include flex(row, flex-start, center);
+    position: relative;
+    padding-bottom: 32%;
+    &-in {
+      @include flex(row, flex-start, center);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      &-content {
+        margin-right: 30px;
+      }
+      .commercial-content {
+        width: 33.33%;
+        align-self: flex-end;
+        span {
+          margin-bottom: 0;
+        }
+      }
+      .square-pic-two-link {
+        height: 100%;
+        padding-bottom: 0;
+        margin-left: 30px;
+        width: 33.33%;
+      }
+    }
+  }
+  .cities {
+    .cities-in {
+      @include flex(row, center, center);
+    }
+    &-content {
+      width: 25%;
+      margin: 10px;
+    }
+    &-pic {
+      width: 25%;
+      margin: 10px;
+      opacity: 0;
+      animation: slideIn 1s ease-out forwards;
+      &:nth-child(1) {
+        animation-delay: 1.5s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 1s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.5s;
+      }
+
+      &:nth-child(4) {
+        animation-delay: 0s;
+      }
+    }
+    &-slider {
+      @include flex(row, center, center);
+      flex-direction: row-reverse;
+      gap: 20px;
+    }
+  }
+  .agents.agents-content {
+    @include flex(row, center, center);
+  }
+  .agents-in .agents-content .agent {
+    width: calc(50% - 2px);
+  }
+  .testimonials-in .testimonials-content {
+    @include flex(row, center, center);
+    .testimonial {
+      margin: 0 15px;
+    }
+  }
+}
+@media (min-width: 992px) {
+  .form-section {
+    &-in {
+      .form-section-content {
+        padding-right: 0;
+        .form-section-content-zero {
+          width: 50%;
+          padding-right: 20px;
+        }
+
+        .form-section-content-text {
+          width: 50%;
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+  .agents-in .agents-content {
+    @include flex(row, center, center);
+    .agent {
+      width: calc(33.33% - 2px);
+    }
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@media (min-width: 1024px) {
+  .partners {
+    display: flex;
   }
 }

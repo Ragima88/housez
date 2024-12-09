@@ -1,0 +1,125 @@
+@import "../../styles/mixins";
+.property-square {
+  @include flex(column, center, center);
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+  .slider-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0) 0 50%,
+      rgba(0, 0, 0, 0.75) 100%
+    );
+    transition: opacity 300ms ease;
+    &:hover {
+      opacity: 0;
+    }
+  }
+  .property-img {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  .properties-content {
+    @include flex(column, flex-start, flex-end);
+    z-index: 2;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    .properties-position {
+      font-size: 10px;
+      line-height: 11px;
+      margin: 0;
+      text-transform: uppercase;
+      padding: 3px 5px;
+      background-color: rgba(0, 0, 0, 0.65);
+      left: 0;
+      bottom: 0;
+      color: #fff;
+      font-weight: 500;
+      border-radius: 2px;
+    }
+    .properties-title {
+      font-family: Roboto;
+      font-weight: 300;
+      font-size: 16px;
+      text-transform: capitalize;
+      color: #fff;
+    }
+    .properties-price {
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      bottom: 20px;
+      left: 20px;
+    }
+    .properties-icons {
+      @include flex(row, center, flex-start);
+      margin-bottom: 12px;
+      span {
+        font-family: Roboto;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 300;
+        color: #fff;
+        margin-left: 22px;
+        margin-right: 20px;
+      }
+      .square-icon-bed {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          background-image: url(/src/assets/icons/icon-white-bed.png);
+          background-size: contain;
+          width: 18px;
+          height: 18px;
+          right: 15px;
+        }
+      }
+      .square-icon-bath {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          background-image: url(/src/assets/icons/icon-white-shower.png);
+          background-size: contain;
+          width: 18px;
+          height: 18px;
+          right: 15px;
+        }
+      }
+      .square-icon-car {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          background-image: url(/src/assets/icons/icon-white-car.png);
+          background-size: contain;
+          width: 18px;
+          height: 18px;
+          right: 15px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 576px) {
+  .property-square {
+    width: calc(50% - 20px);
+    margin: 10px 10px;
+  }
+}
+@media (min-width: 992px) {
+  .property-square {
+    width: calc(33.3% - 30px);
+    margin: 15px 15px;
+  }
+}
